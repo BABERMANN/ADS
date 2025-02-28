@@ -1,0 +1,130 @@
+//1. Escreva um programa para encontrar a soma S = 5 + 10 + 15 + …. + 555
+
+S=0
+x=0
+while x <556
+
+
+//2. Escreva um programa que leia a nota de 10 alunos e calcule a média da classe
+s=0
+N  =  10
+X=1
+while  x  <=n:
+  nota= float(input(f"digitte a nota do aluno" {x:2}:"))
+  s+= nota
+  x+=1
+print (f"media da classe={S/N:.1f}")
+
+
+
+//3. Escreva um programa que leia um número de 1 a 10, e mostre a tabuada desse
+número.
+
+numero= int(input("digite um numero de 1-10:"))
+i=1
+while 1 <=10:
+  print (f"{numero} x {i:2} = {numero*i:2}")
+  i+=1
+
+
+//4. Faça um programa que leia um número inteiro N e imprima todos os números de 1
+até N.
+
+n = int(input("digite um numero inteiro"))
+x=1
+while x<n:
+  print (x,end=" ")
+  x+=1
+
+
+
+//5 Faça um programa que leia dois números inteiros X e Y e imprima todos os números
+de X até Y (considere que X sempre será menor que Y).
+
+x= int(input("digite o valor de x:))
+y= int(input("digite o valor de x:))
+numero=x
+while numero<=y:
+  print(numero,end =" ")
+  numero+=1
+
+
+//6. Faça um programa que apresenta o total da soma dos números de 0 até 100
+X=0
+s=0
+while x<=100
+  s+=x
+  x+=1
+print("soma = ",s)
+
+
+
+//7.Faça um programa que apresenta o total da soma dos números pares até 100
+x=0
+s=0
+while x+=100
+  s+=x
+  x+=2
+print("soma =",s)
+
+
+
+//8. x = int(input("Digite a sequencia"))
+soma = x
+y = 1
+
+while y != 0:
+  y = int(input("digite um numero"))
+  soma = soma + y
+
+print(soma)
+
+9//.Escreva um programa que leia as notas dos alunos e calcule a média da classe. A
+entrada de dados termina quando for digitado o valor -1.
+
+soma=0
+qtd=0
+nota=float(input("digite nota"))
+while nota !=-1:
+  soma+=nota
+  qtd+=1
+  nota=float(input("digite nota"))
+print("media",soma/qtd)
+
+
+//10.Chico tem 1,50 metro e cresce 2 centímetros por ano, enquanto Zé tem 1,10 metro
+e cresce 3 centímetros por ano. Faça um programa que calcule quantos anos serão
+necessários para que Zé seja maior que Chico.
+
+altura_chico=1.5
+cresc_chico=0.02
+altura_ze=1.10
+cresc_ze=0.03
+tempo=0
+while altura_ze<=altura_chico: 
+  altura_ze += cresc_ze
+  altura_chico += cresc_chico
+  tempo+=1
+print("serao necessarios",tempo,"anos para ze seja maior que chico")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
