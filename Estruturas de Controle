@@ -100,7 +100,18 @@ print(media)
 10. Escreva um programa que leia um número inteiro positivo e imprima o
 fatorial desse número.
 
+numero = int(input("Digite um Numero:"))
+for x in range(1,numero + 1,):
+  print(f"{x}!", end=" ")  
 
+
+11.Um aluno está aprendendo a jogar xadrez, mas tem dificuldade em saber
+para qual direção ele pode mover sua Torre. Sabemos que um tabuleiro de
+xadrez é composto por 8 linhas e 8 colunas, e que a Torre se move
+ortogonalmente, ou seja, pelas linhas (horizontais) e pelas colunas (verticais).
+Escreva um programa que solicite ao aluno o número da linha e da coluna
+que indicam a posição de sua Torre. O programa deve imprimir quais são os
+possíveis movimentos da Torre
 
 
 
