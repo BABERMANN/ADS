@@ -84,3 +84,29 @@ for x in lista:
   print(x*3)
 
 
+9 – Escreva um programa que calcule a média dos valores: 5, 19, 27, 2, 10,
+15, 8.8, 17, 15.9 .
+
+lista = [5, 19, 27, 2, 10,15, 8.8, 17, 15.9]
+soma = 0
+
+for x in lista:
+  soma = soma + x
+
+media = soma / 9
+print(media)   
+
+
+10. Escreva um programa que leia um número inteiro positivo e imprima o
+fatorial desse número.
+
+
+
+
+
+
+
+
+
+
+
