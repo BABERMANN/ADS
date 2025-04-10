@@ -113,6 +113,30 @@ Escreva um programa que solicite ao aluno o número da linha e da coluna
 que indicam a posição de sua Torre. O programa deve imprimir quais são os
 possíveis movimentos da Torre
 
+contador_linha_direita = 0
+contador_linha_esquerda = 0
+contador_frente = 0
+contador_atras = 0
+
+numerolinha = int(input("Digite o numero da linha:"))
+numerocoluna = int(input("Digite o numero da coluna:"))
+
+
+for x in range(numerolinha,8,1):
+  contador_linha_direita +=1
+print("Pode avançar",contador_linha_direita,"casas para a direita")
+
+for y in range(numerolinha,1,-1):
+  contador_linha_esquerda += 1
+print("Pode avancar",contador_linha_esquerda,"casas para a esquerda")
+
+for x in range(numerocoluna,8,1):
+  contador_frente +=1
+print("Pode avançar",contador_frente,"casas para frente")
+
+for x in range(numerocoluna,1,-1):
+  contador_atras +=1
+print("Pode avançar",contador_atras,"casas para tras")
 
 
 
