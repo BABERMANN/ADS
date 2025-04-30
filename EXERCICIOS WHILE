@@ -1,8 +1,9 @@
 //1. Escreva um programa para encontrar a soma S = 5 + 10 + 15 + …. + 555
 
-S=0
-x=0
-while x <556
+s = 0 
+while s != 555:
+    s += 5
+    print(s)
 
 
 //2. Escreva um programa que leia a nota de 10 alunos e calcule a média da classe
