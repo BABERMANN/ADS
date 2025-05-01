@@ -1,0 +1,40 @@
+t = (3,3,3,3)
+
+s_tupla = 0
+
+for i in t:
+  s_tupla +=t[i]
+media_tupla = s_tupla / len(t)
+print(media_tupla)
+------------------------------------------------
+import random
+
+t = ()
+for i in range(100)
+  numeros = random.randint(1,15)
+  t += (numeros,)
+  cntg += 1
+print(t)
+
+contador_5 = 0
+
+for i in t:
+  if i == 5:
+    contador_5 += 1
+print(contador_5)
+
+------------------------------------------------
+exe-entrega
+
+relatorio = ()
+
+print("Digite (NN) para parar de registrar")
+while nome.upper != "NN":
+  nome = input("Digite o nome do aluno:")
+  relatorio += (nome,)
+  nota1 = float(input("Digite a primeira nota:"))
+  relatorio += (nota1,)
+  nota2 = float(input("Digite a segunda nota:"))
+  relatorio += (nota2,)
+  faltas = int(input("Digite o numero de faltas:"))
+print(relatorio)
