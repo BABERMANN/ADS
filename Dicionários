@@ -5,14 +5,68 @@ Ao final, o programa deve informar o valor total da compra eatualiza o estoque.
 Quando for informado “fim do dia”, o programa deveexibir o valor total de vendas no dia e a tabela com o estoque atualizado.
 
 
-Estoque={ }
-Estoque['Lápis HB']=(300,1.20)
-Estoque['Caneta Azul']=(500,1.80)
-Estoque['Borracha']=(150,0.90)
-Estoque['Agenda']=(80,12.50)
-Estoque['Caderno']=(100,22.80)
-Estoque['Apontador']=(30,6.40)
+Estoque = {
+    'Lápis HB': (300, 1.20),
+    'Caneta Azul': (500, 1.80),
+    'Borracha': (150, 0.90),
+    'Agenda': (80, 12.50),
+    'Caderno': (100, 22.80),
+    'Apontador': (30, 6.40)
+}
+
 print("Produto      Quantidade  Valor ")
+print()
 for produto in Estoque:
-    quantidade , valor = Estoque[produto]
+    quantidade, valor = Estoque[produto]
     print(f"{produto:12} {quantidade:10}{valor:7.2f} ")
+
+finalizar = False
+num_cliente = 1
+total_compra = 0  
+
+while not finalizar:
+    print("\nCliente", num_cliente)
+    total_cliente = 0  
+    print("Selecione a quantidade de produtos:")
+    for produto in Estoque:
+        qtd = int(input(produto + ": "))
+        quantidade_estoque, valor = Estoque[produto]
+        total_cliente += qtd * valor
+    print("Total do cliente:", f"R${total_cliente:.2f}")
+    total_compra += total_cliente
+    num_cliente += 1
+    print("Fim da Compra?")
+    finalizar = input("S/N: ").upper() == "S"
+
+print("\nTotal de todas as compras:", f"R${total_compra:.2f}")
+
+Escreva um programa que leia nome e duas notas de vários alunos, armazenando esses dados um dicionário, 
+onde a chave é o nome do aluno, e as notas estão numa lista. A entrada de dados deve terminar quando 
+for digitado “fim” para o nome do aluno.
+Em seguida, peça para o usuário digitar um nome, e exiba as notas e a média das notas daquele aluno. 
+Repita esse processo até que, novamente, o usuário digite “fim” para o nome do aluno.
+
+
+alunos = {}  
+
+
+terminar = False
+while not terminar:
+    nome = input("Digite o nome do aluno")
+    nota1 = float(input("Digite a primeira nota: "))
+    nota2 = float(input("Digite a segunda nota: "))
+    terminar = input("Deseja finalizar? s/n:").upper() == "S"
+   
+    alunos[nome] = [nota1, nota2]
+
+for chave in alunos:
+  print(chave,alunos[chave])
+
+nome_busca = 
+
+
+
+
+
+
+
