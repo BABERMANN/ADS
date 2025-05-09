@@ -1,0 +1,18 @@
+A tabela a seguir apresenta as informações dos produtos de umapapelaria. Faça um programa que armazene as informações utilizandoum dicionário.
+Em seguida, implemente o sistema de vendas. Para cada novo cliente, oprograma apresenta os produtos e o usuário escolhe a quantidade de cadaum.
+
+Ao final, o programa deve informar o valor total da compra eatualiza o estoque. 
+Quando for informado “fim do dia”, o programa deveexibir o valor total de vendas no dia e a tabela com o estoque atualizado.
+
+
+Estoque={ }
+Estoque['Lápis HB']=(300,1.20)
+Estoque['Caneta Azul']=(500,1.80)
+Estoque['Borracha']=(150,0.90)
+Estoque['Agenda']=(80,12.50)
+Estoque['Caderno']=(100,22.80)
+Estoque['Apontador']=(30,6.40)
+print("Produto      Quantidade  Valor ")
+for produto in Estoque:
+    quantidade , valor = Estoque[produto]
+    print(f"{produto:12} {quantidade:10}{valor:7.2f} ")
