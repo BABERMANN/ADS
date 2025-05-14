@@ -47,22 +47,32 @@ Em seguida, peça para o usuário digitar um nome, e exiba as notas e a média d
 Repita esse processo até que, novamente, o usuário digite “fim” para o nome do aluno.
 
 
-alunos = {}  
+alunos = {}
 
-
+# Cadastro dos alunos
 terminar = False
 while not terminar:
-    nome = input("Digite o nome do aluno")
-    nota1 = float(input("Digite a primeira nota: "))
-    nota2 = float(input("Digite a segunda nota: "))
-    terminar = input("Deseja finalizar? s/n:").upper() == "S"
-   
-    alunos[nome] = [nota1, nota2]
+    nome = input("Digite o nome do aluno (ou 'fim' para encerrar): ")
+    if nome.lower() == "fim":
+        terminar = True
+    else:
+        nota1 = float(input("Digite a primeira nota: "))
+        nota2 = float(input("Digite a segunda nota: "))
+        alunos[nome] = [nota1, nota2]
 
-for chave in alunos:
-  print(chave,alunos[chave])
-
-nome_busca = 
+# Consulta dos alunos
+terminar = False
+while not terminar:
+    nome_busca = input("\nDigite o nome do aluno para ver as notas (ou 'fim' para encerrar): ")
+    if nome_busca.lower() == "fim":
+        terminar = True
+    elif nome_busca in alunos:
+        notas = alunos[nome_busca]
+        media = sum(notas) / len(notas)
+        print(f"Notas de {nome_busca}: {notas}")
+        print(f"Média: {media:.2f}")
+    else:
+        print("Aluno não encontrado.")
 
 
 
