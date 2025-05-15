@@ -186,8 +186,8 @@ for palavras in lista_palavras:
   else:
     contador_de_palavras[palavras] = 1
 
-for frase in contador_de_palavras:
-  print(frase,":",contador_de_palavras[frase])
+for frases in contador_de_palavras:
+  print(frases,":",contador_de_palavras[frase])
 
 
 
