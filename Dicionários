@@ -150,8 +150,44 @@ while opc != "f":
     elif opc == "c"
     nome_del = input("Digite o nome que deseja apagar:")
     deletar = agenda.get(nome_dell)
-    
 
+>terminar<
+
+
+--Escreva um programa que leia uma frase digitada pelo usuário e conte quantas vezes cada palavra aparece nessa frase.
+
+Exemplo:
+
+Digite uma frase: o cara bateu na cara do outro cara e o outro cara ficou de cara no chão
+
+Saída:
+
+o : 2
+cara : 5
+bateu : 1
+na : 1
+do : 1
+outro : 2
+e : 1
+ficou : 1
+de : 1
+no : 1
+chão : 1
+    
+contador_de_palavras = {}
+
+frase = input("Digite sua frase amigo:")
+
+lista_palavras = frase.split()
+
+for palavras in lista_palavras:
+  if palavras in contador_de_palavras:
+    contador_de_palavras[palavras] += 1
+  else:
+    contador_de_palavras[palavras] = 1
+
+for frase in contador_de_palavras:
+  print(frase,":",contador_de_palavras[frase])
 
 
 
