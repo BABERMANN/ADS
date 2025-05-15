@@ -77,6 +77,82 @@ while not terminar:
 
 
 
+Escreva um programa que conte a quantidade de cada vogal em um texto earmazene em um dicionário, 
+onde a chave é cada vogal encontrada no texto, incluindoas vogais acentuadas. 
+No final, exiba o conteúdo do dicionário de forma formatada.Exemplo: vogal a - 10 vezes
+vogal 
+
+vogais = "aeiou"
+
+contador = {}
+
+for vogal in vogais:
+  contador[vogal] = 0
+
+texto =  input("Digite um texto: ").lower()
+
+for letra in texto:
+  if letra in vogais:
+    contador[letra] += 1
+print(contador)
+
+for vogal in contador:
+  print(vogal,":", contador[vogal])
+
+
+3. Uma pista de Kart permite 10 voltas para cada um de 6 corredores. 
+Escreva umprograma que leia todos os tempos em segundos e os guarde em um dicionário, 
+onde achave é o nome do corredor. Ao final diga de quem foi a melhor volta da prova e emque volta.
+
+
+
+
+4. Elabore um programa para armazenar uma agenda de telefones em um dicionário.Cada pessoa pode ter um ou mais telefones (lista) e a chave do dicionário é o nome dapessoa. O programa deve conter um menu com as opções listadas abaixo:
+a) Incluir novo nome: acrescenta um novo nome na agenda, com um ou mais
+telefones.
+b) Incluir telefone: acrescenta um telefone em um nome existente na agenda. Caso o nome não exista na agenda, emitir uma mensagem de erro.
+c) Excluir nome: exclui uma pessoa da agenda.
+d) Consultar telefone: retorna os telefones de uma pessoa na agenda.
+e) Exibir agenda: exibe todas as pessoas cadastradas e seus telefones.
+f) Fim: termina a execução do programa
+
+agenda = {}
+
+lista_tell = ()
+           
+print("a Incluir novo nome: acrescenta um novo nome na agenda, com um ou mais telefones.")
+print("b Incluir telefone: acrescenta um telefone em um nome existente na agenda. Caso o nome não exista na agenda, emitir uma mensagem de erro.")
+print("c Excluir nome: exclui uma pessoa da agenda.")
+print("d Consultar telefone: retorna os telefones de uma pessoa na agenda.")
+print("e Exibir agenda: exibe todas as pessoas cadastradas e seus telefones.")
+print("f Fim: termina a execução do programa")
+print("-"*50)
+opc = input("Selecione uma opcão:").lower()
+
+while opc != "f":
+  if opc == "a":
+    nome = input("Digite o nome:").lower()
+    num_telcadastrado = int(input("Quantos telefones voce deseja cadastrar:"))
+    for i in range(num_telcadastrado):
+        lista_tell.append(int(input("Digite o telefone que deseja cadastrar")))
+    agenda[nome] = lista_tell
+
+  elif opc == "b":
+    nome = input("Digite o nome:")
+    telefone = agenda.get(nome)
+    if telefone is None:  
+      print("Nome nao encontrado.")
+    else:
+      add_tell = inpu("Digite o telefone")
+      telefone.append(add_tell)
+      agenda[nome] = telefone
+    
+    elif opc == "c"
+    nome_del = input("Digite o nome que deseja apagar:")
+    deletar = agenda.get(nome_dell)
+    
+
+
 
 
 
