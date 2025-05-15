@@ -138,18 +138,29 @@ while opc != "f":
     agenda[nome] = lista_tell
 
   elif opc == "b":
-    nome = input("Digite o nome:")
-    telefone = agenda.get(nome)
+    nome_b = input("Digite o nome:")
+    telefone = agenda.get(nome_d)
     if telefone is None:  
       print("Nome nao encontrado.")
     else:
-      add_tell = inpu("Digite o telefone")
+      add_tell = input("Digite o telefone")
       telefone.append(add_tell)
       agenda[nome] = telefone
     
-    elif opc == "c"
+  elif opc == "c":
     nome_del = input("Digite o nome que deseja apagar:")
-    deletar = agenda.get(nome_dell)
+    deletar = agenda.get(nome_del)
+    if deletar == nome_del:
+      agenda.pop(nome_del)
+      print("Nome deletado com sucesso!")
+
+  elif opc == "d":
+    nome_d = input("Digite o nome:")
+    nome_d_get = agenda.get(nome_d)
+    if nome_d_get is None:
+      print("Nome nao encontrado:")
+    else:
+      print()
 
 >terminar<
 
