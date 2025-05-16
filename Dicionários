@@ -118,51 +118,65 @@ f) Fim: termina a execução do programa
 
 agenda = {}
 
-lista_tell = ()
-           
 print("a Incluir novo nome: acrescenta um novo nome na agenda, com um ou mais telefones.")
 print("b Incluir telefone: acrescenta um telefone em um nome existente na agenda. Caso o nome não exista na agenda, emitir uma mensagem de erro.")
 print("c Excluir nome: exclui uma pessoa da agenda.")
 print("d Consultar telefone: retorna os telefones de uma pessoa na agenda.")
 print("e Exibir agenda: exibe todas as pessoas cadastradas e seus telefones.")
 print("f Fim: termina a execução do programa")
-print("-"*50)
-opc = input("Selecione uma opcão:").lower()
+print("-" * 50)
 
-while opc != "f":
-  if opc == "a":
-    nome = input("Digite o nome:").lower()
-    num_telcadastrado = int(input("Quantos telefones voce deseja cadastrar:"))
-    for i in range(num_telcadastrado):
-        lista_tell.append(int(input("Digite o telefone que deseja cadastrar")))
-    agenda[nome] = lista_tell
+while True:
+    opc = input("Selecione uma opção: ").lower()
 
-  elif opc == "b":
-    nome_b = input("Digite o nome:")
-    telefone = agenda.get(nome_d)
-    if telefone is None:  
-      print("Nome nao encontrado.")
+    if opc == "a":
+        nome = input("Digite o nome: ").lower()
+        num_telcadastrado = int(input("Quantos telefones você deseja cadastrar: "))
+        lista_tell = []  # Inicialize a lista de telefones dentro do bloco 'a'
+        for i in range(num_telcadastrado):
+            telefone = input(f"Digite o {i+1}º telefone: ")
+            lista_tell.append(telefone)
+        agenda[nome] = lista_tell
+
+    elif opc == "b":
+        nome_b = input("Digite o nome: ").lower()
+        if nome_b in agenda:
+            add_tell = input("Digite o telefone a adicionar: ")
+            agenda[nome_b].append(add_tell)
+            print("Telefone adicionado com sucesso!")
+        else:
+            print("Nome não encontrado na agenda.")
+
+    elif opc == "c":
+        nome_del = input("Digite o nome que deseja apagar: ").lower()
+        if nome_del in agenda:
+            del agenda[nome_del]
+            print("Nome deletado com sucesso!")
+        else:
+            print("Nome não encontrado na agenda.")
+
+    elif opc == "d":
+        nome_d = input("Digite o nome: ").lower()
+        if nome_d in agenda:
+            telefones = agenda[nome_d]
+            print(f"Telefones de {nome_d}: {telefones}")
+        else:
+            print("Nome não encontrado na agenda.")
+
+    elif opc == "e":
+        if agenda:
+            print("\nAgenda:")
+            for nome, telefones in agenda.items():
+                print(f"{nome}: {telefones}")
+        else:
+            print("A agenda está vazia.")
+
+    elif opc == "f":
+        print("Encerrando o programa.")
+        break  # Sai do loop while
+
     else:
-      add_tell = input("Digite o telefone")
-      telefone.append(add_tell)
-      agenda[nome] = telefone
-    
-  elif opc == "c":
-    nome_del = input("Digite o nome que deseja apagar:")
-    deletar = agenda.get(nome_del)
-    if deletar == nome_del:
-      agenda.pop(nome_del)
-      print("Nome deletado com sucesso!")
-
-  elif opc == "d":
-    nome_d = input("Digite o nome:")
-    nome_d_get = agenda.get(nome_d)
-    if nome_d_get is None:
-      print("Nome nao encontrado:")
-    else:
-      print()
-
->terminar<
+        print("Opção inválida. Por favor, tente novamente.")
 
 
 --Escreva um programa que leia uma frase digitada pelo usuário e conte quantas vezes cada palavra aparece nessa frase.
