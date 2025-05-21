@@ -1,0 +1,39 @@
+1 – Modifique a função linha(c) para que o tamanho da linha seja definido na chamada
+da função. Se o parâmetro não for fornecido, a linha deverá ter tamanho 20.
+
+  def linha(quantidade=20):
+  for i in range(quantidade):
+    print("=",end="")
+    
+
+linha()
+
+
+2- Crie uma função mensagem(M), que exibe a mensagem M com uma linha acima e
+outra abaixo
+
+    def mensagem(m):
+  print(20*"-")
+  print(m)
+  print(20*"-")
+
+mensagem("biridindark")
+
+
+3- Escreva a função somaSequência(n) que retorna a soma S = 1+2+3+...+N
+
+    def somaseq(n):
+  s = 0
+  for i in range(1,n+1):
+    s += i
+  return s
+
+somaseq(5)
+
+
+
+
+
+
+
+    
