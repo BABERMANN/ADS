@@ -1,0 +1,35 @@
+Escreva um programa que receba do usuário as seguintes informações:
+nome do aluno, nota1 e nota2. A digitação deverá acontecer até que o usuário digite “fim” para o nome do aluno. Grave essas informações no arquivo dados_alunos.txt.
+
+*write so aceita uma string*
+
+arq = open("dados_alunos.txt","w")
+nome = input("digite o nome do aluno:")
+while nome != "fim":
+    nota1 = float(input("Digite a nota 1:"))
+    nota2 = float(input("Digite a nota 2:"))
+    arq.write(f"Nome: {nome}, Notas: {nota1}, {nota2}\n")
+    nome = input("digite o nome do aluno")
+
+arq.close()
+
+
+Escreva um programa que utilize os dados gravados no arquivo dados_alunos.txtpara exibir: o nome de cada aluno, suas notas e a média das notas.
+
+arq = open("dados_alunos.txt","r")
+print("Dados alunos")
+print("-"*20)
+linha = arq.readline()
+while linha != "":
+    aluno = linha.split()    
+    nome = aluno[0]
+    nota1 = float(aluno[1])
+    nota2 = float(aluno[2])
+    media = (nota1 + nota2) / 2
+    print("-"*30)
+    print("Nome:"  ,nome)
+    print("Nota 1:",  nota1)
+    print("Nota 2:"  ,nota2)
+    print("Media",  media)
+    linha = arq.readline()
+arq.close()
