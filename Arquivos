@@ -33,3 +33,16 @@ while linha != "":
     print("Media",  media)
     linha = arq.readline()
 arq.close()
+
+
+
++para entrega
+arq = open("pontos.dat.txt","r")
+linha = arq.readline()
+while linha != "":
+    pontos = linha.split()
+    pontuacao = pontos[1:]
+    total_pontuacao = sum(pontuacao)
+    print(pontos[0],total_pontuacao)
+    linha = arq.readline()
+ arq.close()
