@@ -46,3 +46,67 @@ while linha != "":
     print(pontos[0],total_pontuacao)
     linha = arq.readline()
  arq.close()
+
+O arquivo clima.bin é um arquivo binário que contém os seguintes objetos: 
+a) Um dicionário com dados meteorológicos. A chave é o dia da observação e o valor é uma tupla contendo: temperatura, umidade, pressão e velocidade do vento  
+
+ b) Uma lista contendo uma relação de dias de observação 
+
+ Escreva um programa que leia as informações do arquivo clima.bin e grave em um arquivo texto chamado relatório.txt um relatório com as informações a seguir. 
+
+Considerando somente os dias relacionados na lista imprima: 
+
+a) média de velocidade do vento 
+
+ b) maior pressão atingida 
+
+c) menor umidade e o dia em que ocorreu
+
+d) dias em que a temperatura superou os 25 graus
+
+
+import pickle
+
+def ler_bin():
+    f = open("clima.bin", "rb")
+    dic = pickle.load(f)
+    lista = pickle.load(f)
+   
+
+    return dic,lista
+    f.close
+
+dic,lista =ler_bin()
+
+soma_velocidade = 0
+for dia in dic:
+    if dia in lista:
+        velocidade = dic[dia][3]
+        soma_velocidade += velocidade
+print(f"{soma_velocidade/len(lista):.1f}")
+
+
+maior_press = 0
+for dia in dic:
+    if dia in lista:
+        if dic[dia][2] > maior_press:
+            maior_press = dic[dia][2]
+
+print(maior_press)
+
+menor_humidade = 1000
+for dia in dic:
+    if dia in lista:
+        if dic[dia][1] < menor_humidade:
+            menor_humidade = dic[dia][1]
+print(dia, menor_humidade)
+
+dias_maior = []
+for dia in dic:
+    if dia in lista:
+        if dic[dia][0] > 25:
+            dias_maior.append(dia)
+print(dias_maior)
+
+
+
