@@ -110,3 +110,75 @@ print(dias_maior)
 
 
 
++++++++++++++++++exercicio para terminar
+import pickle
+
+def ler_arquivo_bin():
+    f = open("população.jlf","rb")
+    matriz = pickle.load(f)
+    f.close()
+    return matriz
+    # print(matriz)
+    
+
+matriz = ler_arquivo_bin()
+
+
+def menor_5mil():
+    lista_5menor = []
+    for i in range(5):
+        for y in range(7):
+            if matriz[i][y] < 5:
+                lista_5menor.append(f"({i},{y})")
+    return lista_5menor
+menor = menor_5mil()
+        
+
+def soma_popu():
+    soma = 0
+    for i in range(5):
+        for y in range(7):
+            soma += matriz[i][y]
+    return soma
+        
+soma_ = soma_popu()
+
+arq = open("Levantamento_demografico.txt","w")
+arq.write("="*40+"\n")
+arq.write("Levantamento demografico 2024\n")
+arq.write(str(soma_)+"MIL Habitantes\n")
+arq.write("Regioes com menos de 5mil Habitantes"+str(menor)+"\n")
+arq.write("="*40)
+
+
+
+
+arq.close()
+
+#parte dois
+
+def ler_arq():
+    arq = open("movimentos.txt","r")
+    lista = arq.readlines()
+    for linha in lista:
+        num = linha.split("#")
+        num1 = int(num[0])
+        num2 = int(num[1])
+        num3 = int(num[2])
+        matriz[num1][num2]+=num3
+    for i in range(5):
+        for j in range(7):
+            print(f"{matriz[i][j]:>4}", end=" ") 
+        #print(num)
+        #for i in range(5):
+            #for y in range(7):
+                #if matriz[i][y] == matriz[num1][num2]:
+                    #matriz[i][y] += num3
+       
+
+
+    
+    arq.close()
+
+
+
