@@ -32,3 +32,36 @@ int main(){
     
 }
 
+//2. Faça um programa que leia 3 valores inteiros e calcule a soma e o produto
+
+#include <stdio.h>
+
+int main(){
+
+    int num1,num2,num3;
+
+    printf("Digite o primeiro numero inteiro:");
+    scanf("%d",&num1);
+
+    printf("Digite o segundo numero inteiro:");
+    scanf("%d",&num2);
+
+    printf("Digite o terceiro numero inteiro:");
+    scanf("%d",&num3);
+
+
+    printf("%d+%d+%d = %d\n", num1,num2,num3, num1+num2+num3);
+    printf("%d.%d.%d = %d",num1,num2,num3, num1*num2*num3);
+
+//3. Faça um programa para calcular a área do círculo
+
+int main(){
+    float raio;
+    printf("Digite o raio da circuferencia:");
+    scanf("%f",&raio);
+
+    printf("A area da circuferencia: %f", 3.14 * raio * raio);
+    
+    return 0;
+}
+
