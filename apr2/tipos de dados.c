@@ -1,3 +1,7 @@
+//Escreva um programa que leia dia, mês e ano de nascimento uma pessoa.
+//Imprima a frase “Você nasceu em xx/xx/xxxx.”
+
+
 #include <stdio.h>
 
 int main(){
