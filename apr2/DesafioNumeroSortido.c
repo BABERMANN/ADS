@@ -8,7 +8,7 @@
 // O programa não deve deixar o usuário digitar números repetidos
 
 #include <stdio.h>
-#include <stdlib.h>     //debugar!!!!
+#include <stdlib.h>     //debugar!!!! contagem de tentativas, printar os numeros em posicoes certas e em posicoes erradas
 #include <time.h>
 
 int main(){
