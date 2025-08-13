@@ -1,7 +1,8 @@
 // implementar em Linguagem C o seguinte Jogo:
 // São sorteados cinco números de 0 a 9 distintos
 // O jogador deve acertar os números na ordem correta A cada jogada, o programa imprime
-// Um * para cada número certo no lugar certob) Um # para cada número certo no lugar errado O jogo termina quando o jogador acertar o número ou o número máximo de tentativas for esgotado
+// Um * para cada número certo no lugar certob) Um # para cada número certo no lugar errado 
+//O jogo termina quando o jogador acertar o número ou o número máximo de tentativas for esgotado
 // Observações
 // O programa deve imprimir primeiro todos os asteriscos e depois os hashtags
 // O programa não deve deixar o usuário digitar números repetidos
