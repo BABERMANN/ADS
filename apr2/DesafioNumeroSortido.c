@@ -8,23 +8,61 @@
 // O programa não deve deixar o usuário digitar números repetidos
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>     //debugar!!!!
 #include <time.h>
 
-int main()
-{
-    int i, num_sortido, senha[4];
+int main(){
+    int i, j,k, num_sortido, cont_tentativas, cont_vitoria, senha[4], senha_tentativa[4];
 
     printf("Jogo da senha!\n");
+    printf("O programa vai sortear 5 numeros, voce deve tentar adivinhar a senha em 7 tentativas\n");
+    printf(" # = numero certo em posicao errada\n");
+    printf(" * = numero certo na posicao certa\n");
+    srand(time(0));
     for (i = 0; i < 5; i++)
     {
-        srand(time(0));
-        num_sortido = rand() % 10;  //o num_sortido na esta sorteando
+        num_sortido = rand() % 10;
         senha[i] = num_sortido;
     }
 
-    for (i = 0; i < 5; i++)
-    {
-        printf("%d",senha[i]);
+    for (i=0;i<5;i++) {
+    printf("%d",senha[i]);
     }
+    cont_tentativas = 0;
+    do
+    {
+        printf("Digite sua tentativa\n");
+        scanf("%d", &senha_tentativa[i]);
+
+        for (i = 0; i < 5; i++)
+        {
+            cont_vitoria = 0;
+            if (senha[i] == senha_tentativa[i])  // teste vitoria
+            {
+                cont_vitoria++;
+            }
+            if (cont_vitoria == 5)
+            {
+                printf("Voce venceu!");
+                return 0;
+            }
+
+            for (k = 0; k < cont_tentativas; k++){  // posicao certa
+                printf("*");
+            }
+
+            for (j = 0; j < 5; j++)
+            {
+                if (senha[i] == senha_tentativa[j]) // num certo posicao errado
+                    printf("#");
+            }
+            cont_tentativas++;
+        }
+    }
+
+    while (cont_tentativas >= 7); // num tentativas
+
+    printf("Voce perdeu :(");
+    return 0;
+
 }
