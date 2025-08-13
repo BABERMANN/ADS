@@ -83,7 +83,7 @@ int main()
     printf("-----|--------------|\n");
     for (i = 0; i < N_pessoas; i++)
     {
-        printf(" %d |    %d idade  |\n", codigo[i], idade[i]);
+        printf(" %d |    %d idade  |\n", codigo[i], idade[i]); // formatar a saida!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     return 0;
