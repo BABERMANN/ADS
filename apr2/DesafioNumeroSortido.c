@@ -8,61 +8,88 @@
 // O programa não deve deixar o usuário digitar números repetidos
 
 #include <stdio.h>
-#include <stdlib.h>     //debugar!!!! contagem de tentativas, printar os numeros em posicoes certas e em posicoes erradas
+#include <stdlib.h>
 #include <time.h>
 
-int main(){
-    int i, j,k, num_sortido, cont_tentativas, cont_vitoria, senha[4], senha_tentativa[4];
+int main()
+{
+    int i, j, k, num_sortido, cont_tentativas, cont_vitoria, senha[5], senha_tentativa[5], cont_num;
 
     printf("Jogo da senha!\n");
-    printf("O programa vai sortear 5 numeros, voce deve tentar adivinhar a senha em 7 tentativas\n");
+    printf("O programa vai sortear 5 numeros, voce deve tentar adivinhar a senha em 7 tentativas\n");    // formatar saidas 
     printf(" # = numero certo em posicao errada\n");
     printf(" * = numero certo na posicao certa\n");
     srand(time(0));
     for (i = 0; i < 5; i++)
     {
-        num_sortido = rand() % 10;
+        num_sortido = rand() % 10; // sorteador de numero
         senha[i] = num_sortido;
     }
 
-    for (i=0;i<5;i++) {
-    printf("%d",senha[i]);
+    for (i = 0; i < 5; i++)
+    {
+        printf("%d", senha[i]); // printar a senha certa
     }
+
+    printf("\n");
+
+    cont_num = 1;
+    for (i = 0; i < 5; i++)
+    {
+        printf("Digite a posicao do %d\n", cont_num); // ler a tentativa do usuario
+        scanf("%d", &senha_tentativa[i]);
+        cont_num += 1;
+    }
+
     cont_tentativas = 0;
+    cont_vitoria = 0;
     do
     {
-        printf("Digite sua tentativa\n");
-        scanf("%d", &senha_tentativa[i]);
-
         for (i = 0; i < 5; i++)
         {
-            cont_vitoria = 0;
-            if (senha[i] == senha_tentativa[i])  // teste vitoria
+            if (senha[i] == senha_tentativa[i]) // teste vitoria
             {
                 cont_vitoria++;
             }
-            if (cont_vitoria == 5)
-            {
-                printf("Voce venceu!");
-                return 0;
-            }
+        }
+        printf("CONT VITORIA %d\n", cont_vitoria); // cont vitoria conta ate o 4
 
-            for (k = 0; k < cont_tentativas; k++){  // posicao certa
-                printf("*");
-            }
+        if (cont_vitoria == 5)
+        {
+            printf("Voce venceu!");
+            return 0;
+        }
 
-            for (j = 0; j < 5; j++)
+        for (k = 0; k < cont_vitoria; k++) // num certo na posicao certa
+        {
+            printf("*");
+        }
+        printf("\n");
+
+        for (j = 0; j < 5; j++)
+        {
+            for (i = 0; i < 5; i++)
             {
-                if (senha[i] == senha_tentativa[j]) // num certo posicao errado
+
+                if (senha[j] == senha_tentativa[i] && i != j) // num certo posicao errado
                     printf("#");
             }
-            cont_tentativas++;
         }
-    }
 
-    while (cont_tentativas >= 7); // num tentativas
+        printf("\n");
+        cont_tentativas++;
+        cont_vitoria = 0;
 
-    printf("Voce perdeu :(");
+        for (i = 0; i < 5; i++)
+        {
+            cont_num = 0;
+            printf("Digite a posicao do %d\n", cont_num); // ler a tentativa do usuario
+            scanf("%d", &senha_tentativa[i]);
+            cont_num += 1;
+        }
+
+    } while (cont_tentativas < 6); // num tentativas
+
+    printf("Voce perdeu :(");    
     return 0;
-
 }
