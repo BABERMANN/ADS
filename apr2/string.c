@@ -49,4 +49,37 @@ printf("\n");
  printf("Soma total de vendas = %d\n", soma_vendas);
 
     
+}//fazer depois nao esquecer
+
+//1-) Escreva um programa que receba uma palavra e verifique seela é um palíndromo, 
+// ou seja, se escrita do fim para ocomeço é igual à palavra escrita do começo para o fim.Exemplos: RENNER, ANA, MIRIM, OVO.
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+char stg[15];
+int i,j,palindrome = 1;
+
+    puts("sua palavra");
+    gets(stg);
+
+    i = 0;
+    j = strlen(stg) -1;
+
+    while (palindrome && i < j){
+        if (stg[i] != stg[j]){
+            palindrome = 0;
+        }
+        i++;
+        j--;
+    }
+
+    if(palindrome) puts("BOA BB");
+    else puts("CHAPOU BB");
+
+    return 0;
 }
+
+
+
