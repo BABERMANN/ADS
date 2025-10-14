@@ -2,23 +2,38 @@
 #include <stdlib.h>
 #include <time.h>
 
-void cria_vetor(N){
-    int *ptr,i,num_sortido;
+int cria_vetor(int N) {
+    int *ptr, i, num_sortido;
+
+    
+    ptr = (int*)malloc(N * sizeof(int));
+    if (ptr == NULL) {
+        printf("Erro na alocação de memória!\n");
+        return 0;
+    }
+
+    
     srand(time(0));
-    *ptr = (int*)malloc(N*sizeof(int));
-    for(i = 0; i < N; i++){
-    num_sortido = rand() %99;
-    *ptr++ = num_sortido;
-    printf("%d", *ptr);
+
+    
+    printf("Vetor gerado: ");
+    for (i = 0; i < N; i++) {
+        num_sortido = rand() % 100; 
+        ptr[i] = num_sortido;
+        printf("%d ", ptr[i]);
+        return ptr;
+    }
+    printf("\n");
+
+    
     
 }
-}
 
-int main(){
+int main() {
     int N;
-    printf("Qual o tamanho do vetor:");
+    printf("Qual o tamanho do vetor: ");
     scanf("%d", &N);
-    cria_vetor(N);''
+    cria_vetor(N);
+    return 0;
 }
-
-/////////////// TERMINAR!!!!!!!!!
+------------------------------------------------------------------------------------
