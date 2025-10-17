@@ -79,14 +79,36 @@ void imprime_turma(aluno *turma, int qtd_alunos) {
 }
 
 int main() {
-    int N;
-    printf("Digite o tamanho da turma: ");
-    scanf("%d", &N);
+    const int MAX_TURMAS = 10;
+    aluno* turmas[MAX_TURMAS];
+    int qtd_alunos[MAX_TURMAS];
+    int num_turmas;
 
-    aluno *turma = le_turma(N);
-    imprime_turma(turma, N);
+    printf("Quantas turmas deseja cadastrar (max 10)? ");
+    scanf("%d", &num_turmas);
 
-    free(turma);
+    if (num_turmas < 1 || num_turmas > MAX_TURMAS) {
+        printf("Número de turmas inválido.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < num_turmas; i++) {
+        printf("\nTurma %d\n", i + 1);
+        printf("Digite o tamanho da turma: ");
+        scanf("%d", &qtd_alunos[i]);
+        turmas[i] = le_turma(qtd_alunos[i]);
+    }
+
+    for (int i = 0; i < num_turmas; i++) {
+        printf("\nTurma %d:\n", i + 1);
+        imprime_turma(turmas[i], qtd_alunos[i]);
+    }
+
+    for (int i = 0; i < num_turmas; i++) {
+        free(turmas[i]);
+    }
+
     return 0;
 }
+
     
