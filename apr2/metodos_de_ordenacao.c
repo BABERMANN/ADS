@@ -12,12 +12,20 @@ typedef struct{
 
 
  int main(){
-    int n,*ptr;
+    int n;
     FILE *file = fopen("tabela_desordenada.jlf", "rb");
+
+    if (file == NULL) {
+    perror("Erro ao abrir o arquivo");
+    return 0;
+    } 
+
+
     fread(&n, sizeof(int),1,file);
     printf("%d", n);
+
     registro *ptr = (registro *) malloc(n*sizeof(registro));
-    fread(ptr, sizeof(int),1,file);
+    fread(ptr, sizeof(registro),1,file);
     
 
 
