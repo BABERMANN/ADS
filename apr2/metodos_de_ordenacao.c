@@ -8,8 +8,10 @@ typedef struct{
     char conceito;
 }registro;
 
-
-
+typedef struct {
+ int tamanho;
+ registro *item;
+} tabela;
 
  int main(){
     int n;
