@@ -17,7 +17,7 @@ typedef struct{
 
     if (file == NULL) {
     perror("Erro ao abrir o arquivo");
-    return 0;
+    return 1;
     } 
 
 
