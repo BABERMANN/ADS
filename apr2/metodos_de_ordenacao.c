@@ -27,7 +27,8 @@ typedef struct {
     printf("%d", n);
 
     registro *ptr = (registro *) malloc(n*sizeof(registro));
-    fread(ptr, sizeof(registro),1,file);
+    fread(ptr, sizeof(registro),n,file);
+    printf("Chave: %d media %f conceito %c", file -> chave, )
     
 
 
