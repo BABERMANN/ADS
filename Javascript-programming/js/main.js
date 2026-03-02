@@ -1,32 +1,11 @@
-const Usuarios = [
-{
-  id: 1,           
-  nome: "Eredin", 
-  isAdmin: false    
-},
-{
-id: 2,
-nome: "Caua",
-isAdmin: true
-},
+const myName = "eredin";
 
-];
+let tamanhoString = myName.length;
 
+console.log("Tamanho da string:",tamanhoString);
 
- const listaDeAdmin = Usuarios.filter(Usuarios => Usuarios.isAdmin === true );
+let numeroSortido = Math.floor(Math.random() * 6);
 
-const listaComYennefer = [...Usuarios, {id: 3, nome: "Yennefer", isAdmin: true}];
+console.log("Numero sortido:",numeroSortido);
 
-console.log(listaComYennefer)
-console.log(listaDeAdmin);
-
-async function buscarPersonagem() {
-  
-  const resposta = await fetch("insira minha api aqui");
-  
-
-  const dados = await resposta.json();
-  
-  
-  console.log(dados.name);
-}
+console.log("Letra do Nome:", myName[numeroSortido]);
