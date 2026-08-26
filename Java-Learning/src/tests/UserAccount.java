@@ -32,6 +32,10 @@ public class UserAccount {
         timeline[posts.length - 1] = newPost;
     }
 
+    \\ timeLine[qtdTimeline % 10] = post;
+    \\ qtdTimeline;
+
+    
     public void publish(String quote){
         Post newPost = new Post(this, quote);
         if (newPost == null || quote.isBlank()) return;
