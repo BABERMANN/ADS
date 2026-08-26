@@ -34,6 +34,7 @@ public class UserAccount {
 
     public void publish(String quote){
         Post newPost = new Post(this, quote);
+        if (newPost == null || quote.isBlank()) return;
         for(int i = 0; i < posts.length; i ++){
             if(posts[i] == null){
                 posts[i] = newPost;
