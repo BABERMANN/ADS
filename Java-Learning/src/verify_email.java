@@ -23,6 +23,7 @@ public class verify_email {
         String emailTeste = ".@.....";
         boolean resultado = valid(emailTeste);
 
-        System.out.println("O e-mail '" + emailTeste + "' é válido? " + resultado);
+        String result = String.format("O e-mail %s é valido? : %b",emailTest,resultado)
+        System.out.println(result)
     }
 }
